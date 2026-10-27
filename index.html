@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101d24" />
+    <meta name="description" content="Тихий дождливый вечер в парке — маленькое место для Леры." />
+    <title>Для Леры · один тихий вечер</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Marck+Script&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=5" />
+  </head>
+  <body>
+    <div class="world" aria-hidden="true">
+      <div class="scene"></div>
+      <div class="scene-vignette"></div>
+      <div class="scene-glow"></div>
+      <canvas id="rain"></canvas>
+      <div class="mist"></div>
+    </div>
+
+    <main class="page">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="На начало страницы">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>тихое место <i>для Леры</i></span>
+        </a>
+        <span class="topbar-note">вечер, в котором можно выдохнуть</span>
+      </header>
+
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <h1 id="hero-title">мышке<br /><em>моей</em></h1>
+          <button class="letter-trigger" id="open-letter" type="button" aria-haspopup="dialog">
+            <span class="letter-trigger-icon" aria-hidden="true">✉</span>
+            <span>Открыть письмо</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+        <div class="side-caption" aria-hidden="true"><span>01 / 01</span><span class="side-caption-rule"></span><span>под шум дождя</span></div>
+      </section>
+
+      <footer class="bottom-bar">
+        <div class="weather-note"><span class="weather-dot"></span><span>Летний дождь, тёплый свет и немного тишины</span></div>
+        <div class="player" aria-label="Музыкальный плеер">
+          <div class="record" aria-hidden="true"><span>♪</span></div>
+          <div class="track">
+            <span class="track-label">сейчас звучит</span>
+            <span class="track-title">3g0th2002 — Побудь со мной</span>
+            <div class="progress-wrap">
+              <span id="current-time">0:00</span>
+              <input id="progress" type="range" min="0" max="100" value="0" aria-label="Положение в песне" />
+              <span id="duration">0:00</span>
+            </div>
+          </div>
+          <button class="play-button" id="play-button" type="button" aria-label="Включить музыку">
+            <svg id="play-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M8 5.6a1 1 0 0 1 1.5-.86l9.4 6.4a1 1 0 0 1 0 1.72l-9.4 6.4A1 1 0 0 1 8 18.4V5.6Z"/></svg>
+          </button>
+          <audio id="song" preload="metadata" src="./pobud-so-mnoy.mp3"></audio>
+        </div>
+      </footer>
+    </main>
+
+    <div class="letter-overlay" id="letter-overlay" hidden>
+      <div class="letter-backdrop" id="letter-backdrop"></div>
+      <section class="letter-dialog" role="dialog" aria-modal="true" aria-labelledby="letter-title" tabindex="-1">
+        <button class="close-button" id="close-letter" type="button" aria-label="Закрыть письмо">×</button>
+        <div class="letter-kicker">письмо для тебя</div>
+        <div class="letter-flourish" aria-hidden="true">✳</div>
+        <h2 id="letter-title">Дорогая Лера,</h2>
+        <div class="letter-body" id="letter-body">
+          <p>лерочка, мышка моя, пожалуйста отдохни сегодня хорошо, ты у меня так сильно устаешь еще иногла из за меня( не переживай из за тройки кис, это всего лишь оценка, ты у меня все равно самая умная и самая самая лучшая девушка на свете!!! и я не знаю что у тебя с мамой, но надеюсь все хорошо, сделай урочки, помойся и если захочешь поговорить с мной то скажешь мне об этом, я свободен для тебя в любой момент времени! принцесса моя я очень сильно за тебя переживаю и безумно сильно люблю тебя мышка моя!!!!</p>
+        </div>
+        <div class="letter-signature">с теплом <span>♡</span></div>
+      </section>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
